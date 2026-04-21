@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequência de ativos selecionados</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; color: #0f172a; font-family: Arial, Helvetica, sans-serif; }
+    body { padding: 16px; }
+    .table-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .table-wrap { border: 1px solid #dbe3ee; border-radius: 14px; overflow: auto; padding: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06); }
+    table.dataTable { width: 100% !important; font-size: 14px; }
+    table.dataTable thead th { white-space: nowrap; background: #f8fafc !important; }
+    table.dataTable tbody td { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="table-title">Frequência de ativos selecionados</div>
+  <div class="table-wrap">
+    <table id="tabela" class="display compact stripe nowrap" style="width:100%">
+      <thead><tr><th>ticker</th><th>n_ocorrencias</th><th>n_trajetorias</th><th>peso_medio</th><th>ranking_frequencia</th></tr></thead>
+      <tbody>
+        <tr><td>ODPV3</td><td>7.686</td><td>128</td><td>13,78%</td><td>1</td></tr>
+<tr><td>UNIP6</td><td>7.020</td><td>152</td><td>11,41%</td><td>2</td></tr>
+<tr><td>LEVE3</td><td>6.186</td><td>150</td><td>11,62%</td><td>3</td></tr>
+<tr><td>UNIP3</td><td>5.592</td><td>152</td><td>15,08%</td><td>4</td></tr>
+<tr><td>CGAS5</td><td>4.788</td><td>150</td><td>11,54%</td><td>5</td></tr>
+<tr><td>BRKM5</td><td>3.492</td><td>140</td><td>10,33%</td><td>6</td></tr>
+<tr><td>VALE3</td><td>3.436</td><td>150</td><td>9,69%</td><td>7</td></tr>
+<tr><td>FESA4</td><td>3.360</td><td>102</td><td>4,64%</td><td>8</td></tr>
+<tr><td>GRND3</td><td>3.264</td><td>100</td><td>11,24%</td><td>9</td></tr>
+<tr><td>CMIG4</td><td>3.228</td><td>104</td><td>7,28%</td><td>10</td></tr>
+<tr><td>BRSR6</td><td>3.172</td><td>100</td><td>5,18%</td><td>11</td></tr>
+<tr><td>YDUQ3</td><td>3.096</td><td>126</td><td>5,66%</td><td>12</td></tr>
+<tr><td>ISAE4</td><td>3.072</td><td>150</td><td>17,68%</td><td>13</td></tr>
+<tr><td>AZZA3</td><td>3.048</td><td>80</td><td>4,28%</td><td>14</td></tr>
+<tr><td>LREN3</td><td>3.024</td><td>102</td><td>11,04%</td><td>15</td></tr>
+<tr><td>ITUB3</td><td>2.904</td><td>102</td><td>6,56%</td><td>16</td></tr>
+<tr><td>ENBR3</td><td>2.820</td><td>139</td><td>10,35%</td><td>17</td></tr>
+<tr><td>GOAU4</td><td>2.760</td><td>110</td><td>4,18%</td><td>18</td></tr>
+<tr><td>PETR4</td><td>2.664</td><td>128</td><td>9,76%</td><td>19</td></tr>
+<tr><td>PETR3</td><td>2.616</td><td>130</td><td>7,23%</td><td>20</td></tr>
+<tr><td>CSUD3</td><td>2.568</td><td>124</td><td>7,84%</td><td>21</td></tr>
+<tr><td>GGBR3</td><td>2.568</td><td>124</td><td>4,33%</td><td>22</td></tr>
+<tr><td>WIZC3</td><td>2.498</td><td>114</td><td>4,65%</td><td>23</td></tr>
+<tr><td>UNIP5</td><td>2.484</td><td>52</td><td>7,57%</td><td>24</td></tr>
+<tr><td>CGAS3</td><td>2.364</td><td>52</td><td>8,59%</td><td>25</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#tabela').DataTable({
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Todos']],
+        scrollX: true,
+        autoWidth: false,
+        deferRender: true,
+        order: [],
+        language: {
+          search: 'Buscar:',
+          lengthMenu: 'Mostrar _MENU_ linhas',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ linhas',
+          infoEmpty: 'Mostrando 0 a 0 de 0 linhas',
+          zeroRecords: 'Nenhum registro encontrado',
+          paginate: { first: 'Primeira', last: 'Última', next: 'Próxima', previous: 'Anterior' }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

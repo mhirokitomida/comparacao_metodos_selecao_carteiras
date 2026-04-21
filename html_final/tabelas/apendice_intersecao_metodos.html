@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interseção entre métodos</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; color: #0f172a; font-family: Arial, Helvetica, sans-serif; }
+    body { padding: 16px; }
+    .table-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .table-wrap { border: 1px solid #dbe3ee; border-radius: 14px; overflow: auto; padding: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06); }
+    table.dataTable { width: 100% !important; font-size: 14px; }
+    table.dataTable thead th { white-space: nowrap; background: #f8fafc !important; }
+    table.dataTable tbody td { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="table-title">Interseção entre métodos</div>
+  <div class="table-wrap">
+    <table id="tabela" class="display compact stripe nowrap" style="width:100%">
+      <thead><tr><th>metodo_linha</th><th>metodo_coluna</th><th>n_intersecao</th><th>indice_jaccard</th></tr></thead>
+      <tbody>
+        <tr><td>COMB_SEL_001</td><td>COMB_SEL_001</td><td>105</td><td>1,0000</td></tr>
+<tr><td>COMB_SEL_001</td><td>COMB_SEL_010</td><td>62</td><td>0,4218</td></tr>
+<tr><td>COMB_SEL_001</td><td>COMB_SEL_011</td><td>59</td><td>0,3960</td></tr>
+<tr><td>COMB_SEL_001</td><td>COMB_SEL_014</td><td>82</td><td>0,6560</td></tr>
+<tr><td>COMB_SEL_001</td><td>COMB_SEL_025</td><td>23</td><td>0,1353</td></tr>
+<tr><td>COMB_SEL_001</td><td>COMB_SEL_026</td><td>39</td><td>0,2321</td></tr>
+<tr><td>COMB_SEL_001</td><td>COMB_SEL_029</td><td>56</td><td>0,3200</td></tr>
+<tr><td>COMB_SEL_010</td><td>COMB_SEL_001</td><td>62</td><td>0,4218</td></tr>
+<tr><td>COMB_SEL_010</td><td>COMB_SEL_010</td><td>104</td><td>1,0000</td></tr>
+<tr><td>COMB_SEL_010</td><td>COMB_SEL_011</td><td>93</td><td>0,8158</td></tr>
+<tr><td>COMB_SEL_010</td><td>COMB_SEL_014</td><td>67</td><td>0,4820</td></tr>
+<tr><td>COMB_SEL_010</td><td>COMB_SEL_025</td><td>54</td><td>0,3913</td></tr>
+<tr><td>COMB_SEL_010</td><td>COMB_SEL_026</td><td>73</td><td>0,5489</td></tr>
+<tr><td>COMB_SEL_010</td><td>COMB_SEL_029</td><td>60</td><td>0,3529</td></tr>
+<tr><td>COMB_SEL_011</td><td>COMB_SEL_001</td><td>59</td><td>0,3960</td></tr>
+<tr><td>COMB_SEL_011</td><td>COMB_SEL_010</td><td>93</td><td>0,8158</td></tr>
+<tr><td>COMB_SEL_011</td><td>COMB_SEL_011</td><td>103</td><td>1,0000</td></tr>
+<tr><td>COMB_SEL_011</td><td>COMB_SEL_014</td><td>69</td><td>0,5074</td></tr>
+<tr><td>COMB_SEL_011</td><td>COMB_SEL_025</td><td>56</td><td>0,4148</td></tr>
+<tr><td>COMB_SEL_011</td><td>COMB_SEL_026</td><td>75</td><td>0,5769</td></tr>
+<tr><td>COMB_SEL_011</td><td>COMB_SEL_029</td><td>65</td><td>0,3963</td></tr>
+<tr><td>COMB_SEL_014</td><td>COMB_SEL_001</td><td>82</td><td>0,6560</td></tr>
+<tr><td>COMB_SEL_014</td><td>COMB_SEL_010</td><td>67</td><td>0,4820</td></tr>
+<tr><td>COMB_SEL_014</td><td>COMB_SEL_011</td><td>69</td><td>0,5074</td></tr>
+<tr><td>COMB_SEL_014</td><td>COMB_SEL_014</td><td>102</td><td>1,0000</td></tr>
+<tr><td>COMB_SEL_014</td><td>COMB_SEL_025</td><td>31</td><td>0,1950</td></tr>
+<tr><td>COMB_SEL_014</td><td>COMB_SEL_026</td><td>50</td><td>0,3247</td></tr>
+<tr><td>COMB_SEL_014</td><td>COMB_SEL_029</td><td>73</td><td>0,4710</td></tr>
+<tr><td>COMB_SEL_025</td><td>COMB_SEL_001</td><td>23</td><td>0,1353</td></tr>
+<tr><td>COMB_SEL_025</td><td>COMB_SEL_010</td><td>54</td><td>0,3913</td></tr>
+<tr><td>COMB_SEL_025</td><td>COMB_SEL_011</td><td>56</td><td>0,4148</td></tr>
+<tr><td>COMB_SEL_025</td><td>COMB_SEL_014</td><td>31</td><td>0,1950</td></tr>
+<tr><td>COMB_SEL_025</td><td>COMB_SEL_025</td><td>88</td><td>1,0000</td></tr>
+<tr><td>COMB_SEL_025</td><td>COMB_SEL_026</td><td>76</td><td>0,6667</td></tr>
+<tr><td>COMB_SEL_025</td><td>COMB_SEL_029</td><td>51</td><td>0,3129</td></tr>
+<tr><td>COMB_SEL_026</td><td>COMB_SEL_001</td><td>39</td><td>0,2321</td></tr>
+<tr><td>COMB_SEL_026</td><td>COMB_SEL_010</td><td>73</td><td>0,5489</td></tr>
+<tr><td>COMB_SEL_026</td><td>COMB_SEL_011</td><td>75</td><td>0,5769</td></tr>
+<tr><td>COMB_SEL_026</td><td>COMB_SEL_014</td><td>50</td><td>0,3247</td></tr>
+<tr><td>COMB_SEL_026</td><td>COMB_SEL_025</td><td>76</td><td>0,6667</td></tr>
+<tr><td>COMB_SEL_026</td><td>COMB_SEL_026</td><td>102</td><td>1,0000</td></tr>
+<tr><td>COMB_SEL_026</td><td>COMB_SEL_029</td><td>65</td><td>0,3988</td></tr>
+<tr><td>COMB_SEL_029</td><td>COMB_SEL_001</td><td>56</td><td>0,3200</td></tr>
+<tr><td>COMB_SEL_029</td><td>COMB_SEL_010</td><td>60</td><td>0,3529</td></tr>
+<tr><td>COMB_SEL_029</td><td>COMB_SEL_011</td><td>65</td><td>0,3963</td></tr>
+<tr><td>COMB_SEL_029</td><td>COMB_SEL_014</td><td>73</td><td>0,4710</td></tr>
+<tr><td>COMB_SEL_029</td><td>COMB_SEL_025</td><td>51</td><td>0,3129</td></tr>
+<tr><td>COMB_SEL_029</td><td>COMB_SEL_026</td><td>65</td><td>0,3988</td></tr>
+<tr><td>COMB_SEL_029</td><td>COMB_SEL_029</td><td>126</td><td>1,0000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#tabela').DataTable({
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Todos']],
+        scrollX: true,
+        autoWidth: false,
+        deferRender: true,
+        order: [],
+        language: {
+          search: 'Buscar:',
+          lengthMenu: 'Mostrar _MENU_ linhas',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ linhas',
+          infoEmpty: 'Mostrando 0 a 0 de 0 linhas',
+          zeroRecords: 'Nenhum registro encontrado',
+          paginate: { first: 'Primeira', last: 'Última', next: 'Próxima', previous: 'Anterior' }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

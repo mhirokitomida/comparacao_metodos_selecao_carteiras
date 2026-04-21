@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela por método de seleção</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; color: #0f172a; font-family: Arial, Helvetica, sans-serif; }
+    body { padding: 16px; }
+    .table-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .table-wrap { border: 1px solid #dbe3ee; border-radius: 14px; overflow: auto; padding: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06); }
+    table.dataTable { width: 100% !important; font-size: 14px; }
+    table.dataTable thead th { white-space: nowrap; background: #f8fafc !important; }
+    table.dataTable tbody td { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="table-title">Tabela por método de seleção</div>
+  <div class="table-wrap">
+    <table id="tabela" class="display compact stripe nowrap" style="width:100%">
+      <thead><tr><th>ranking_familia</th><th>periodo_avaliacao</th><th>familia_id</th><th>familia_nome</th><th>n_unidades</th><th>retorno_acumulado_medio</th><th>volatilidade_anualizada_medio</th><th>sharpe_anualizado_medio</th><th>sortino_anualizado_medio</th><th>max_drawdown_medio</th><th>dividend_yield_medio_carteira_medio</th><th>crescimento_dividendos_carteira_medio</th><th>robustez_janelas_moveis_medio</th><th>hit_ratio_vs_benchmark_medio</th><th>score_ranking_familia</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>projeto_completo</td><td>COMB_SEL_001</td><td>COMB_SEL_001</td><td>8</td><td>360,82%</td><td>21,29%</td><td>0,4413</td><td>0,7097</td><td>-31,20%</td><td>11,97%</td><td>0,29%</td><td>72,28%</td><td>51,20%</td><td>0,9714</td></tr>
+<tr><td>2</td><td>projeto_completo</td><td>COMB_SEL_011</td><td>COMB_SEL_011</td><td>24</td><td>301,44%</td><td>22,38%</td><td>0,3363</td><td>0,5354</td><td>-34,76%</td><td>9,26%</td><td>0,94%</td><td>67,83%</td><td>48,84%</td><td>0,7714</td></tr>
+<tr><td>3</td><td>projeto_completo</td><td>COMB_SEL_029</td><td>COMB_SEL_029</td><td>24</td><td>293,33%</td><td>21,98%</td><td>0,3179</td><td>0,5520</td><td>-33,38%</td><td>16,98%</td><td>3,83%</td><td>61,96%</td><td>47,75%</td><td>0,6857</td></tr>
+<tr><td>4</td><td>projeto_completo</td><td>COMB_SEL_014</td><td>COMB_SEL_014</td><td>16</td><td>273,52%</td><td>22,30%</td><td>0,2871</td><td>0,4724</td><td>-31,59%</td><td>11,30%</td><td>0,71%</td><td>64,13%</td><td>50,98%</td><td>0,5429</td></tr>
+<tr><td>5</td><td>projeto_completo</td><td>COMB_SEL_025</td><td>COMB_SEL_025</td><td>32</td><td>244,08%</td><td>24,21%</td><td>0,3022</td><td>0,4455</td><td>-40,19%</td><td>5,82%</td><td>1,27%</td><td>64,01%</td><td>50,09%</td><td>0,3714</td></tr>
+<tr><td>6</td><td>projeto_completo</td><td>COMB_SEL_026</td><td>COMB_SEL_026</td><td>24</td><td>241,71%</td><td>22,92%</td><td>0,2761</td><td>0,4064</td><td>-36,69%</td><td>7,30%</td><td>0,04%</td><td>65,80%</td><td>49,64%</td><td>0,3571</td></tr>
+<tr><td>7</td><td>projeto_completo</td><td>COMB_SEL_010</td><td>COMB_SEL_010</td><td>24</td><td>232,48%</td><td>21,97%</td><td>0,2436</td><td>0,3630</td><td>-37,19%</td><td>9,06%</td><td>0,78%</td><td>65,80%</td><td>46,38%</td><td>0,3000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#tabela').DataTable({
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Todos']],
+        scrollX: true,
+        autoWidth: false,
+        deferRender: true,
+        order: [],
+        language: {
+          search: 'Buscar:',
+          lengthMenu: 'Mostrar _MENU_ linhas',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ linhas',
+          infoEmpty: 'Mostrando 0 a 0 de 0 linhas',
+          zeroRecords: 'Nenhum registro encontrado',
+          paginate: { first: 'Primeira', last: 'Última', next: 'Próxima', previous: 'Anterior' }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

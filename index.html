@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparação de Métodos de Seleção de Carteiras — Relatório Final</title>
+    <link rel="stylesheet" href="html_final/assets/css/comparacao_metodos_selecao_final.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-stack">
+                <div class="brand">
+                    <div class="topbar-title">Comparação de Métodos de Seleção de Carteiras</div>
+                    <div class="topbar-subtitle">Relatório final interativo com rankings, famílias, funil, gráficos finais e evidência estatística</div>
+                </div>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="#resumo">Resumo</a>
+                    <a href="#takeaways">Takeaways</a>
+                    <a href="#metodologia">Metodologia</a>
+                    <a href="#dicionario">Dicionário COMB_SEL</a>
+                    <a href="#rankings">Rankings</a>
+                    <a href="#familias">Famílias</a>
+                    <a href="#graficos">Gráficos finais</a>
+                    <a href="#funil">Funil</a>
+                    <a href="#estatistica">Evidência estatística</a>
+                    <a href="#conclusao">Conclusão</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="hero" id="resumo">
+            <h1>Comparação de Métodos de Seleção de Carteiras — Relatório Final</h1>
+            
+<p>
+    Este relatório final reúne, em uma única interface, os resultados do projeto de comparação entre
+    métodos de seleção de ativos, filtros auxiliares e métodos de alocação em ações brasileiras.
+    O recorte bruto cobre a janela de <b>2010 a 2025</b>, com desenvolvimento até
+    <b>2022</b> e teste fora da amostra entre <b>2023</b> e <b>2025</b>,
+    sempre usando <b>Ibovespa</b> como referência e <b>Selic mensal do Banco Central</b> como taxa livre de risco.
+</p>
+
+<p>
+    A proposta central não foi identificar apenas a melhor carteira pontual, mas entender como diferentes
+    blocos metodológicos se comportam quando avaliados simultaneamente por <b>retorno, risco, drawdown,
+    dividendos, hit ratio, robustez e evidência estatística</b>. Por isso, o relatório foi organizado para permitir
+    leitura executiva no topo e exploração mais profunda nas seções intermediárias.
+</p>
+
+<p>
+    O layout foi pensado para projeto grande: os gráficos são carregados em viewers com seleção por dropdown,
+    enquanto as tabelas pesadas ficam desacopladas em iframes e só são abertas quando você escolhe explicitamente
+    o bloco que deseja inspecionar.
+</p>
+
+            
+<div class="badges">
+    <span class="badge">Métodos de seleção: 7</span>
+    <span class="badge">Filtros auxiliares: 8</span>
+    <span class="badge">Métodos de alocação: 3</span>
+    <span class="badge">Benchmark: Ibovespa</span>
+    <span class="badge">Teste fora da amostra: 2023–2025</span>
+    <span class="badge">Ativo mais frequente: ODPV3</span>
+</div>
+
+        </section>
+
+        <section class="section-card">
+            <h2>Painel executivo</h2>
+            <div class="section-lead">Visão rápida do escopo, da massa de resultados e da força da evidência consolidada.</div>
+            <div class="kpi-grid">
+    <div class="kpi-card">
+        <div class="kpi-title">Tamanho do universo</div>
+        <div class="kpi-value">426</div>
+        <div class="kpi-detail">tickers elegíveis com cadastro</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <div class="kpi-title">Trajetórias consolidadas</div>
+        <div class="kpi-value">456</div>
+        <div class="kpi-detail">métricas em 3 períodos</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <div class="kpi-title">Carteiras consolidadas</div>
+        <div class="kpi-value">3.176</div>
+        <div class="kpi-detail">métricas em 3 períodos</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <div class="kpi-title">Combinações geradas</div>
+        <div class="kpi-value">1.462</div>
+        <div class="kpi-detail">cenário-ano no funil</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <div class="kpi-title">Testes estatísticos</div>
+        <div class="kpi-value">7.140</div>
+        <div class="kpi-detail">unigrupo + pairwise</div>
+    </div>
+    
+
+    <div class="kpi-card">
+        <div class="kpi-title">% significativos</div>
+        <div class="kpi-value">42,8%</div>
+        <div class="kpi-detail">nível de 5%</div>
+    </div>
+    </div>
+        </section>
+
+        <section class="section-card" id="takeaways">
+            <h2>Principais takeaways</h2>
+            <div class="section-lead">Leitura executiva dos resultados mais importantes do projeto.</div>
+            <div class="takeaways-grid">
+    <div class="takeaway-card">
+        <div class="takeaway-index">01</div>
+        <div>
+            <h3>Trajetória líder</h3>
+            <p>A melhor trajetória combinou Equal Weight, COMB_SEL_029 (magic_formula) e apenas_risco_financeiro, com retorno acumulado de 626,1% e drawdown de -29,3%.</p>
+        </div>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <div class="takeaway-index">02</div>
+        <div>
+            <h3>Carteira líder</h3>
+            <p>A melhor carteira pontual veio de COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_puro__min_vol e combinou eficiência muito alta (Sharpe 1,95) com drawdown máximo de apenas -5,6%.</p>
+        </div>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <div class="takeaway-index">03</div>
+        <div>
+            <h3>Famílias vencedoras</h3>
+            <p>No agregado, COMB_SEL_001 liderou entre métodos de seleção, apenas_risco_financeiro liderou entre filtros auxiliares e equal_weight foi a melhor família de alocação.</p>
+        </div>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <div class="takeaway-index">04</div>
+        <div>
+            <h3>Funil saudável</h3>
+            <p>O funil preservou 89,9% das combinações geradas. A principal poda ocorreu por ausencia_markowitz_puro_e_markowitz_restrito, não por colapso generalizado das combinações.</p>
+        </div>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <div class="takeaway-index">05</div>
+        <div>
+            <h3>Evidência estatística</h3>
+            <p>Foram consolidados 7.140 testes, com 42,8% de significância global. O bloco mais forte foi Risco | carteiras | unigrupo.</p>
+        </div>
+    </div>
+    
+
+    <div class="takeaway-card">
+        <div class="takeaway-index">06</div>
+        <div>
+            <h3>Hit ratio não explica tudo</h3>
+            <p>O hit ratio médio ficou perto de 50% (49,0% em trajetórias e 48,8% em carteiras), sugerindo que a superioridade veio mais da assimetria retorno-risco do que da simples frequência de meses vencedores.</p>
+        </div>
+    </div>
+    </div>
+        </section>
+
+        <section class="section-card" id="metodologia">
+            <h2>Metodologia do projeto</h2>
+            <div class="text-columns">
+                <div class="text-block">
+<p>
+    O universo final do projeto ficou em <b>426</b>
+    tickers com cadastro e histórico elegível após os filtros gerais de qualidade de dados, liquidez mínima,
+    histórico de fundamentos e integridade cadastral. O recorte bruto cobre <b>2010–2025</b>,
+    com desenvolvimento até <b>2022</b> e teste fora da amostra em <b>2023–2025</b>,
+    usando <b>Ibovespa</b> como benchmark e <b>Selic mensal do Banco Central</b> como taxa livre de risco.
+</p>
+
+<p>
+    O projeto trabalha com duas unidades analíticas diferentes e isso precisa ser lido com clareza.
+    <b>Carteira</b> é a carteira efetivamente formada em um rebalanceamento específico, com um conjunto de ativos
+    e pesos naquele ponto do tempo. <b>Trajetória</b> é a sequência longitudinal de carteiras pertencentes à mesma
+    receita metodológica ao longo do backtest, ou seja, o caminho acumulado daquela arquitetura ao passar pelos
+    rebalanceamentos. No período-base do HTML, isso gerou <b>1.512</b> carteiras e
+    <b>152</b> trajetórias comparáveis.
+</p>
+
+<p>
+    A camada de seleção foi construída a partir de cinco métodos fundamentais:
+    <b>Dividendos, Graham, Quality / Profitability, Magic Formula, Gordon</b>. Esses métodos não foram avaliados apenas isoladamente; o projeto também gerou
+    combinações entre eles, identificadas no HTML como <b>COMB_SEL</b>. O dicionário COMB_SEL foi incluído justamente
+    para traduzir cada identificador em leitura humana.
+</p>
+
+<p>
+    Os filtros auxiliares partiram de três blocos objetivos:
+    <b>Liquidez, Risco financeiro (não financeiras), Momentum leve</b>. A partir desses blocos, o pipeline gerou combinações de filtros,
+    inclusive o caso sem filtros auxiliares, e depois aplicou podas para manter somente cenários comparáveis
+    e com integridade metodológica.
+</p>
+
+<p>
+    Na camada de alocação, o projeto comparou explicitamente três famílias:
+    <b>Equal Weight, Markowitz puro, Markowitz restrito</b>. A comparação final foi estruturada para preservar justiça metodológica
+    entre essas famílias, evitando comparar combinações que não existiam simultaneamente entre os três blocos de alocação.
+</p>
+
+<p>
+    O funil gerou <b>1.462</b> combinações cenário-ano para avaliação
+    e reteve <b>89,9%</b> delas como comparáveis entre Equal Weight, Markowitz puro e Markowitz restrito.
+    A camada final consolidou <b>456</b> linhas de métricas de trajetórias,
+    <b>3.176</b> linhas de métricas de carteiras e
+    <b>7.140</b> testes estatísticos,
+    dos quais <b>3.057</b>
+    foram significativos a 5%.
+</p>
+</div>
+                <div class="method-grid">
+    <div class="method-card">
+        <h4>Universo e recorte</h4>
+        <p>426 tickers elegíveis, base bruta de 2010–2025, desenvolvimento até 2022 e OOS em 2023–2025.</p>
+    </div>
+    
+
+    <div class="method-card">
+        <h4>Trajetória x carteira</h4>
+        <p>Carteira = portfólio efetivamente formado em um rebalanceamento. Trajetória = sequência longitudinal da mesma receita metodológica ao longo do backtest. No período-base do HTML, isso corresponde a 1512 carteiras e 152 trajetórias.</p>
+    </div>
+    
+
+    <div class="method-card">
+        <h4>Métodos de seleção usados</h4>
+        <p>Foram usados 5 métodos fundamentais: Dividendos, Graham, Quality / Profitability, Magic Formula, Gordon. As combinações entre eles aparecem no relatório sob os identificadores COMB_SEL.</p>
+    </div>
+    
+
+    <div class="method-card">
+        <h4>Filtros auxiliares usados</h4>
+        <p>Os filtros auxiliares foram construídos a partir de 3 blocos-base: Liquidez, Risco financeiro (não financeiras), Momentum leve. O pipeline também considerou combinações entre esses blocos e o caso sem filtros auxiliares.</p>
+    </div>
+    
+
+    <div class="method-card">
+        <h4>Métodos de alocação usados</h4>
+        <p>As famílias de alocação comparadas foram: Equal Weight, Markowitz puro, Markowitz restrito. O funil final reteve apenas cenários comparáveis entre esses três blocos.</p>
+    </div>
+    
+
+    <div class="method-card">
+        <h4>Backtest, métricas e inferência</h4>
+        <p>Foram consolidadas 456 linhas de trajetórias, 3.176 linhas de carteiras e 7.140 testes estatísticos, com 42,8% de significância global.</p>
+    </div>
+    </div>
+            </div>
+            <div class="footer-note">Observação: ao longo do relatório, <b>carteira</b> sempre significa a carteira formada em um rebalanceamento específico, enquanto <b>trajetória</b> significa a sequência longitudinal dessa mesma receita metodológica ao longo do backtest.</div>
+        </section>
+
+        <section class="section-card" id="dicionario">
+            <h2>Dicionário das combinações de seleção</h2>
+            <div class="section-lead">
+                Esta seção traduz os identificadores COMB_SEL para os métodos de seleção que realmente compõem cada combinação.
+                Assim, quando o relatório mostrar algo como COMB_SEL_029, o leitor consegue entender imediatamente do que se trata.
+            </div>
+            <div class="text-stack">
+                <div class="text-block">
+                    <p>O objetivo aqui é transformar os códigos internos do pipeline em leitura humana. Cada linha mostra quantos métodos entram na combinação, quais são eles, a regra usada, quantos ativos a combinação gerou e quantas trajetórias/carteiras efetivamente apareceram no projeto final.</p>
+                    <p>Essa seção é especialmente útil para interpretar os vencedores do ranking geral e para entender se um bloco vencedor veio de uma combinação simples ou de uma interseção entre vários métodos de seleção.</p>
+                </div>
+                <div class="stack-block">
+                    
+    <div class="viewer-card">
+        <h3>Dicionário COMB_SEL</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela</label>
+                <select id="tabela_select_comb_sel"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_comb_sel" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_comb_sel" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+        <div id="tabela_caption_comb_sel" class="viewer-caption"></div>
+    </div>
+    
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Leitura executiva dos resultados</h2>
+            <div class="text-stack">
+                <div class="text-block">
+<p>
+    A melhor trajetória no ranking geral foi
+    <b>equal_weight__COMB_SEL_029__apenas_risco_financeiro</b>,
+    uma combinação de <b>Equal Weight</b> com a combinação de seleção
+    <b>COMB_SEL_029</b> (magic_formula) e o filtro
+    <b>apenas_risco_financeiro</b>.
+    No período completo, ela entregou retorno acumulado de
+    <b>626,1%</b>,
+    Sharpe anualizado de <b>0,647</b>,
+    Sortino de <b>1,297</b> e
+    drawdown máximo de <b>-29,3%</b>.
+</p>
+
+<p>
+    A melhor carteira individual do ranking geral foi
+    <b>COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_puro__min_vol</b>.
+    Ela se destaca por um perfil muito forte em eficiência: retorno acumulado de
+    <b>50,3%</b>,
+    Sharpe anualizado de <b>1,945</b>,
+    Sortino de <b>4,985</b>,
+    Calmar de <b>8,971</b> e
+    drawdown máximo de apenas <b>-5,6%</b>.
+</p>
+
+<p>
+    Esse contraste é um dos pontos mais interessantes do projeto: a melhor trajetória agregada veio de uma
+    família <b>Equal Weight</b> bastante robusta ao longo do tempo, enquanto a melhor carteira pontual apareceu
+    em uma configuração muito eficiente de <b>Markowitz puro</b>. Em outras palavras, o vencedor em consistência
+    longitudinal não é obrigatoriamente o mesmo vencedor em eficiência pontual.
+</p>
+
+<p>
+    Nas médias por família, o melhor método de seleção foi <b>COMB_SEL_001</b>,
+    o melhor filtro auxiliar foi <b>apenas_risco_financeiro</b> e a melhor família de alocação
+    foi <b>equal_weight</b>. Isso sugere que, no agregado, filtros mais parcimoniosos
+    e a alocação simples por Equal Weight continuaram muito competitivos mesmo diante de métodos de otimização
+    mais sofisticados.
+</p>
+</div>
+                <div class="highlight-grid highlight-grid-2">
+                    <div class="highlight-card">
+                        <div class="label">Melhor trajetória</div>
+                        <div class="value">equal_weight__COMB_SEL_029__apenas_risco_financeiro</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label">COMB_SEL da melhor trajetória</div>
+                        <div class="value">COMB_SEL_029 — magic_formula</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label">Melhor carteira</div>
+                        <div class="value">COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_puro__min_vol</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label">COMB_SEL da melhor carteira</div>
+                        <div class="value">COMB_SEL_029 — magic_formula</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label">Patrimônio final base 100</div>
+                        <div class="value">Traj.: 726,08 | Bench: 246,36</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label">Melhor método médio</div>
+                        <div class="value">COMB_SEL_001</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label">Melhor filtro médio</div>
+                        <div class="value">apenas_risco_financeiro</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="label">Melhor alocação média</div>
+                        <div class="value">equal_weight</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card" id="rankings">
+            <h2>Rankings e tabelas principais</h2>
+            <div class="section-lead">O ranking abaixo permite alternar entre trajetórias e carteiras, bem como entre as métricas principais usadas no fechamento do projeto.</div>
+            <div class="highlight-grid" style="margin-bottom:14px;">
+                <div class="highlight-card"><div class="label">Melhor item</div><div class="value" id="ranking_best_id">N/A</div></div>
+                <div class="highlight-card"><div class="label">Retorno acumulado</div><div class="value" id="ranking_best_retorno">N/A</div></div>
+                <div class="highlight-card"><div class="label">Sharpe anualizado</div><div class="value" id="ranking_best_sharpe">N/A</div></div>
+                <div class="highlight-card"><div class="label">Drawdown máximo</div><div class="value" id="ranking_best_drawdown">N/A</div></div>
+            </div>
+            <div class="viewer-card">
+                <h3>Explorador de rankings</h3>
+                <div class="filter-row">
+                    <div class="filter-box"><label>Universo</label><select id="ranking_universo_select"></select></div>
+                    <div class="filter-box"><label>Métrica</label><select id="ranking_metrica_select"></select></div>
+                </div>
+                <div class="viewer-toolbar">
+                    <div></div>
+                    <div class="actions"><a id="tabela_open_rankings" class="btn-link-open" href="#" target="_blank">Abrir tabela</a></div>
+                </div>
+                <iframe id="tabela_frame_rankings" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+                <div id="tabela_caption_rankings" class="viewer-caption"></div>
+            </div>
+        </section>
+
+        <section class="section-card" id="familias">
+            <h2>Famílias analíticas</h2>
+            <div class="section-lead">Esta seção resume as leituras por método de seleção, filtro auxiliar e método de alocação — a camada mais útil para concluir o projeto além dos vencedores pontuais.</div>
+            <div class="highlight-grid" style="margin-bottom:14px;">
+                <div class="highlight-card"><div class="label">Família líder</div><div class="value" id="familia_best_id">N/A</div></div>
+                <div class="highlight-card"><div class="label">Retorno médio</div><div class="value" id="familia_best_retorno">N/A</div></div>
+                <div class="highlight-card"><div class="label">Sharpe médio</div><div class="value" id="familia_best_sharpe">N/A</div></div>
+                <div class="highlight-card"><div class="label">Drawdown médio</div><div class="value" id="familia_best_drawdown">N/A</div></div>
+            </div>
+            <div class="viewer-card">
+                <h3>Explorador de famílias</h3>
+                <div class="filter-row"><div class="filter-box"><label>Tipo de família</label><select id="familia_tipo_select"></select></div></div>
+                <div class="viewer-toolbar">
+                    <div></div>
+                    <div class="actions"><a id="tabela_open_familias" class="btn-link-open" href="#" target="_blank">Abrir tabela</a></div>
+                </div>
+                <iframe id="tabela_frame_familias" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+                <div id="tabela_caption_familias" class="viewer-caption"></div>
+            </div>
+        </section>
+
+        <section class="section-card" id="graficos">
+            <h2>Gráficos finais</h2>
+            <div class="section-lead">
+                Esta seção reúne todos os gráficos finais do projeto em um único explorador.
+                Use o dropdown para escolher qual gráfico deseja ver. Assim, apenas um gráfico ocupa a área por vez,
+                dando mais espaço visual para leitura e comparação.
+            </div>
+            <div class="viewer-grid-single">
+                
+    <div class="viewer-card">
+        <h3>Explorador dos gráficos finais</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione o gráfico</label>
+                <select id="grafico_select_graficos_finais"></select>
+            </div>
+            <div class="actions">
+                <a id="grafico_open_graficos_finais" class="btn-link-open" href="#" target="_blank">Abrir gráfico</a>
+            </div>
+        </div>
+        <iframe id="grafico_frame_graficos_finais" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+        <div id="grafico_caption_graficos_finais" class="viewer-caption"></div>
+    </div>
+    
+            </div>
+        </section>
+
+        <section class="section-card" id="funil">
+            <h2>Funil de sobrevivência e viabilidade</h2>
+            <div class="text-stack">
+                <div class="text-block">
+                    <p>O funil do projeto começou com 1.462 combinações cenário-ano, das quais 1.315 sobreviveram à exigência de comparabilidade entre famílias de alocação.</p>
+                    <p>A taxa de sobrevivência do funil foi de 89,9%, e o principal motivo de exclusão foi &#x27;ausencia_markowitz_puro_e_markowitz_restrito&#x27;. Isso é importante porque mostra que o afunilamento foi metodológico e não aleatório.</p>
+                    <p>No nível operacional, o projeto gerou 1.240 trajetórias totais e 6.722 carteiras totais antes do recorte final do universo principal.</p>
+                </div>
+                <div class="stack-block">
+                    
+    <div class="viewer-card">
+        <h3>Tabelas do funil</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela</label>
+                <select id="tabela_select_funil"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_funil" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_funil" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+        <div id="tabela_caption_funil" class="viewer-caption"></div>
+    </div>
+    
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card" id="estatistica">
+            <h2>Evidência estatística</h2>
+            <div class="text-stack">
+                <div class="text-block">
+<p>
+    A leitura estatística reforça a parte econômica. O bloco mais forte do relatório foi
+    <b>Risco | carteiras | unigrupo</b>, e o melhor bloco bootstrap ficou com <b>equal_weight</b>.
+    Na prática, isso quer dizer que a vantagem observada apareceu sobretudo na distribuição de risco e drawdown,
+    e não apenas em médias de retorno isoladas.
+</p>
+
+<p>
+    O resumo por categoria mostra que <b>unigrupo</b> foi muito mais forte do que <b>pairwise</b>.
+    Risco e Drawdown tiveram 100% de significância no unigrupo em ambos os universos, Dividendos também foi muito forte,
+    e Retorno apareceu com evidência relevante sobretudo nas trajetórias. Já as comparações pairwise ficaram mais moderadas,
+    o que é compatível com um cenário em que há diferenças claras contra nulos absolutos, mas nem sempre uma separação limpa
+    entre todos os grupos entre si.
+</p>
+
+<p>
+    Outro ponto importante é o <b>hit ratio</b>. O hit ratio médio global ficou em
+    <b>49,0%</b> para trajetórias e <b>48,8%</b> para carteiras,
+    ou seja, muito próximo de 50%. Isso enfraquece a tese de que as melhores estratégias simplesmente ganham mais meses
+    do que perdem; a vantagem parece vir mais da qualidade das vitórias, da profundidade das perdas e da robustez acumulada.
+</p>
+</div>
+                <div class="stack-block">
+                    
+    <div class="viewer-card">
+        <h3>Tabelas estatísticas</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela</label>
+                <select id="tabela_select_testes"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_testes" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_testes" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+        <div id="tabela_caption_testes" class="viewer-caption"></div>
+    </div>
+    
+                </div>
+            </div>
+            <div class="footer-note">Destaques adicionais: melhor bloco bootstrap = equal_weight; principal bloco significativo = Risco | carteiras | unigrupo.</div>
+        </section>
+
+        <section class="section-card">
+            <h2>Apêndice navegável</h2>
+            <div class="section-lead">Tabelas auxiliares para composição, interseção entre métodos, quantidade por família e matrizes do heatmap.</div>
+            
+    <div class="viewer-card">
+        <h3>Apendice — tabelas auxiliares</h3>
+        <div class="viewer-toolbar">
+            <div class="filter-box">
+                <label>Selecione a tabela</label>
+                <select id="tabela_select_apendice"></select>
+            </div>
+            <div class="actions">
+                <a id="tabela_open_apendice" class="btn-link-open" href="#" target="_blank">Abrir tabela</a>
+            </div>
+        </div>
+        <iframe id="tabela_frame_apendice" class="viewer-frame" src="about:blank" loading="lazy"></iframe>
+        <div id="tabela_caption_apendice" class="viewer-caption"></div>
+    </div>
+    
+        </section>
+
+        <section class="section-card" id="conclusao">
+            <h2>Conclusão</h2>
+            <div class="text-block">
+<div class="conclusao">
+    <p>
+        Este projeto não foi construído para responder apenas qual carteira teve o maior retorno.
+        Ele foi desenhado para comparar, com consistência metodológica, como diferentes combinações de
+        <b>métodos de seleção</b>, <b>filtros auxiliares</b> e <b>métodos de alocação</b> se comportam quando
+        expostas ao mesmo recorte temporal, ao mesmo benchmark e à mesma estrutura de backtest.
+        A separação entre essas camadas foi essencial porque impede conclusões simplistas do tipo
+        “um vencedor único para tudo” e permite entender onde cada bloco realmente agrega valor.
+    </p>
+
+    <p>
+        A primeira distinção importante do relatório é entre <b>carteira</b> e <b>trajetória</b>.
+        Carteira é a realização pontual de uma seleção com pesos em um rebalanceamento específico;
+        trajetória é a versão longitudinal dessa mesma receita metodológica ao longo do tempo.
+        Essa diferença muda a interpretação dos vencedores. A melhor trajetória do ranking geral foi
+        <b>equal_weight__COMB_SEL_029__apenas_risco_financeiro</b>,
+        enquanto a melhor carteira individual foi
+        <b>COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_puro__min_vol</b>.
+        Em outras palavras, o melhor bloco em consistência acumulada não foi exatamente o mesmo
+        que liderou em eficiência pontual.
+    </p>
+
+    <p>
+        Na camada de seleção, o projeto partiu de cinco métodos fundamentais —
+        <b>Dividendos, Graham, Quality / Profitability, Magic Formula, Gordon</b> — e depois gerou combinações entre eles, identificadas como
+        <b>COMB_SEL</b>. Isso importa porque o vencedor prático do projeto não veio simplesmente de um rótulo genérico,
+        mas de uma combinação específica. A melhor trajetória do estudo juntou <b>Equal Weight</b>,
+        a combinação <b>COMB_SEL_029</b> (magic_formula) e o filtro
+        <b>apenas_risco_financeiro</b>.
+        Esse resultado reforça a utilidade do dicionário COMB_SEL no HTML:
+        sem ele, a leitura executiva ficaria opaca.
+    </p>
+
+    <p>
+        Os filtros auxiliares também merecem leitura própria. O projeto foi construído a partir de três blocos-base —
+        <b>Liquidez, Risco financeiro (não financeiras), Momentum leve</b> — além de suas combinações e do caso sem filtros auxiliares.
+        No agregado, o melhor filtro médio foi <b>apenas_risco_financeiro</b>,
+        o que sugere que filtros mais objetivos e parcimoniosos conseguiram preservar qualidade sem tornar o pipeline
+        excessivamente restritivo. O relatório não aponta para “quanto mais filtro melhor”, mas para uma seleção auxiliar
+        usada com propósito claro.
+    </p>
+
+    <p>
+        Na camada de alocação, o fechamento do projeto foi particularmente rico. O estudo comparou explicitamente
+        <b>Equal Weight, Markowitz puro, Markowitz restrito</b>. O melhor bloco médio de alocação foi
+        <b>equal_weight</b>, e o melhor bloco bootstrap também ficou com
+        <b>equal_weight</b>. Isso reforça a ideia de que a alocação simples por Equal Weight continuou
+        extremamente competitiva quando a pergunta é robustez média. Ao mesmo tempo, a melhor carteira pontual veio de
+        uma configuração de <b>Markowitz puro</b>, mostrando que a sofisticação pode agregar valor, mas mais frequentemente
+        em eficiência pontual do que em robustez média de família.
+    </p>
+
+    <p>
+        O funil do projeto fortalece a credibilidade da comparação. Foram geradas
+        <b>1.462</b> combinações cenário-ano,
+        das quais <b>1.315</b> sobreviveram,
+        com taxa de retenção de <b>89,9%</b>. O principal motivo de exclusão foi
+        <b>ausencia_markowitz_puro_e_markowitz_restrito</b>. Isso sugere que o afunilamento do universo final veio principalmente
+        de comparabilidade metodológica entre famílias de alocação, e não de falha operacional ou colapso generalizado
+        das combinações.
+    </p>
+
+    <p>
+        Na leitura econômica, o projeto aponta para uma hierarquia interessante. <b>Equal Weight</b> aparece muito forte
+        como solução robusta e repetível, especialmente quando combinado com filtros mais enxutos. Por outro lado,
+        <b>Markowitz puro</b> mostrou capacidade real de produzir carteiras individuais extremamente eficientes,
+        com Sharpe elevado e drawdown muito controlado. A mensagem mais madura não é que um bloco “eliminou” o outro,
+        mas que <b>robustez média</b> e <b>eficiência pontual</b> não são exatamente a mesma disputa.
+    </p>
+
+    <p>
+        A camada estatística sustenta essa interpretação. O projeto consolidou
+        <b>7.140</b> testes,
+        dos quais <b>3.057</b>
+        foram significativos a 5%, totalizando <b>42,8%</b> do conjunto.
+        O bloco estatístico mais forte foi <b>Risco | carteiras | unigrupo</b>, enquanto o hit ratio médio ficou perto de 50%
+        — <b>49,0%</b> em trajetórias e <b>48,8%</b> em carteiras.
+        Isso enfraquece a leitura ingênua de que os melhores blocos simplesmente ganharam mais meses; a vantagem parece vir
+        mais da qualidade das vitórias, da contenção das perdas e da robustez acumulada.
+    </p>
+
+    <hr>
+
+    <h3>Interpretação dos resultados</h3>
+
+    <p>
+        Os resultados mostram que os métodos continuam apresentando perfis econômicos distintos,
+        mas o fechamento deste estudo não terminou com uma divisão completa entre líderes por critério.
+        Pelo contrário: <b>houve convergência relevante no comparativo final</b>, com a mesma família aparecendo
+        na liderança dos principais destaques agregados. Ainda assim, cada método manteve características próprias
+        que ajudam a explicar por que essa liderança emergiu.
+    </p>
+
+    <ul>
+        <li>O <b>Equal Weight</b> se mostrou um benchmark forte, simples e competitivo.</li>
+        <li>O <b>Markowitz puro</b> apareceu como a abordagem mais capaz de empurrar eficiência e crescimento, ainda que com maior sensibilidade à concentração.</li>
+        <li>O <b>Markowitz restrito</b> sacrificou parte da liberdade ótima para ganhar disciplina, robustez e implementabilidade.</li>
+        <li>Os <b>filtros auxiliares mais parcimoniosos</b> continuaram muito bem posicionados no fechamento médio.</li>
+        <li>O resultado final mostrou que <b>uma mesma família conseguiu reunir liderança em critérios centrais</b>, em vez de haver completa fragmentação entre vencedores.</li>
+        <li>Isso não elimina os trade-offs entre retorno, risco, drawdown e concentração, mas mostra que, nesta amostra, uma solução conseguiu combiná-los melhor que as demais.</li>
+    </ul>
+
+    <p>
+        Do ponto de vista econômico, esse comportamento é coerente. Estratégias mais agressivas e livres tendem a extrair
+        mais desempenho quando o ambiente favorece seus pesos ótimos, enquanto estratégias mais restritas tendem a abrir mão
+        de parte desse ganho em troca de maior controle de risco e dispersão mais saudável entre ativos.
+        Ao mesmo tempo, o projeto mostra que boa parte da qualidade final não veio apenas de “escolher um método sofisticado”,
+        mas de combinar seleção, filtro e alocação de forma coerente.
+    </p>
+
+    <h3>Principais aprendizados</h3>
+
+    <ul>
+        <li>A distinção entre <b>trajetória</b> e <b>carteira</b> é essencial para interpretar corretamente os vencedores do projeto.</li>
+        <li>Os métodos de seleção foram comparados não apenas isoladamente, mas também por <b>combinações COMB_SEL</b>, o que enriqueceu a leitura prática.</li>
+        <li>Filtros auxiliares mais simples e objetivos mostraram mais valor do que uma lógica excessivamente carregada de restrições.</li>
+        <li><b>Equal Weight</b> permaneceu extremamente forte como bloco médio e como referência de robustez.</li>
+        <li><b>Markowitz puro</b> mostrou capacidade real de gerar carteiras pontuais de altíssima eficiência.</li>
+        <li>O funil metodológico foi saudável: o afunilamento veio principalmente de comparabilidade entre famílias, e não de falhas operacionais.</li>
+        <li>A evidência estatística reforçou que a vantagem observada apareceu sobretudo em risco e drawdown, e não apenas em médias isoladas de retorno.</li>
+        <li>O hit ratio perto de 50% mostra que a superioridade não veio simplesmente de “ganhar mais meses”, mas de ganhar melhor e perder de forma mais controlada.</li>
+    </ul>
+
+    <h3>Conclusão</h3>
+
+    <p>
+        Em termos práticos, o relatório sugere que a escolha do método depende do objetivo do investidor ou do pesquisador.
+        Quem busca uma leitura mais estável, simples e repetível encontra em <b>Equal Weight</b> um competidor muito mais forte
+        do que a intuição superficial sugeriria. Quem busca a melhor carteira pontual e aceita mais dependência do ajuste de otimização
+        encontra espaço em configurações específicas de <b>Markowitz puro</b>. E quem quer interpretar os resultados com mais maturidade
+        deve olhar o projeto em camadas: <b>seleção, filtro, alocação, funil, métricas e evidência estatística</b>.
+    </p>
+
+    <p>
+        A síntese final é esta: o projeto não aponta para um vencedor único e simplista, mas para uma estrutura de dominância mais rica.
+        <b>Equal Weight</b> lidera em robustez média, <b>filtros auxiliares parcimoniosos</b> mostraram valor,
+        e <b>configurações pontuais de Markowitz</b> conseguiram produzir carteiras individuais de altíssima eficiência.
+        Essa conclusão é mais útil do que um “campeão absoluto”, porque ajuda a decidir qual arquitetura faz sentido
+        para cada objetivo real de portfólio.
+    </p>
+</div>
+</div>
+            <div class="footer-note">Patrimônio final base 100: benchmark = 246,36; melhor trajetória = 726,08; melhor carteira = 150,28.</div>
+        </section>
+    </div>
+
+    <script src="html_final/assets/js/comparacao_metodos_selecao_data.js"></script>
+    <script src="html_final/assets/js/comparacao_metodos_selecao_final.js"></script>
+</body>
+</html>

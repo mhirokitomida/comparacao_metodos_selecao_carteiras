@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicionário das combinações de seleção (COMB_SEL)</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; color: #0f172a; font-family: Arial, Helvetica, sans-serif; }
+    body { padding: 16px; }
+    .table-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .table-wrap { border: 1px solid #dbe3ee; border-radius: 14px; overflow: auto; padding: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06); }
+    table.dataTable { width: 100% !important; font-size: 14px; }
+    table.dataTable thead th { white-space: nowrap; background: #f8fafc !important; }
+    table.dataTable tbody td { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="table-title">Dicionário das combinações de seleção (COMB_SEL)</div>
+  <div class="table-wrap">
+    <table id="tabela" class="display compact stripe nowrap" style="width:100%">
+      <thead><tr><th>id_combinacao_selecao</th><th>n_metodos_selecao</th><th>metodos_selecao</th><th>metodo_1</th><th>metodo_2</th><th>metodo_3</th><th>metodo_4</th><th>metodo_5</th><th>regra_combinacao</th><th>quantidade_ativos_resultante</th><th>status_combinacao</th><th>n_trajetorias</th><th>n_carteiras</th></tr></thead>
+      <tbody>
+        <tr><td>COMB_SEL_001</td><td>1</td><td>dividendos</td><td>dividendos</td><td>—</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>306</td><td>com_resultado</td><td>8</td><td>80</td></tr>
+<tr><td>COMB_SEL_002</td><td>2</td><td>dividendos | graham</td><td>dividendos</td><td>graham</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>127</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_003</td><td>3</td><td>dividendos | graham | quality_profitability</td><td>dividendos</td><td>graham</td><td>quality_profitability</td><td>—</td><td>—</td><td>intersecao</td><td>98</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_004</td><td>4</td><td>dividendos | graham | quality_profitability | magic_formula</td><td>dividendos</td><td>graham</td><td>quality_profitability</td><td>magic_formula</td><td>—</td><td>intersecao</td><td>98</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_005</td><td>5</td><td>dividendos | graham | quality_profitability | magic_formula | gordon</td><td>dividendos</td><td>graham</td><td>quality_profitability</td><td>magic_formula</td><td>gordon</td><td>intersecao</td><td>60</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_006</td><td>4</td><td>dividendos | graham | quality_profitability | gordon</td><td>dividendos</td><td>graham</td><td>quality_profitability</td><td>gordon</td><td>—</td><td>intersecao</td><td>60</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_007</td><td>3</td><td>dividendos | graham | magic_formula</td><td>dividendos</td><td>graham</td><td>magic_formula</td><td>—</td><td>—</td><td>intersecao</td><td>125</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_008</td><td>4</td><td>dividendos | graham | magic_formula | gordon</td><td>dividendos</td><td>graham</td><td>magic_formula</td><td>gordon</td><td>—</td><td>intersecao</td><td>72</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_009</td><td>3</td><td>dividendos | graham | gordon</td><td>dividendos</td><td>graham</td><td>gordon</td><td>—</td><td>—</td><td>intersecao</td><td>72</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_010</td><td>2</td><td>dividendos | quality_profitability</td><td>dividendos</td><td>quality_profitability</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>225</td><td>com_resultado</td><td>24</td><td>240</td></tr>
+<tr><td>COMB_SEL_011</td><td>3</td><td>dividendos | quality_profitability | magic_formula</td><td>dividendos</td><td>quality_profitability</td><td>magic_formula</td><td>—</td><td>—</td><td>intersecao</td><td>222</td><td>com_resultado</td><td>24</td><td>240</td></tr>
+<tr><td>COMB_SEL_012</td><td>4</td><td>dividendos | quality_profitability | magic_formula | gordon</td><td>dividendos</td><td>quality_profitability</td><td>magic_formula</td><td>gordon</td><td>—</td><td>intersecao</td><td>140</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_013</td><td>3</td><td>dividendos | quality_profitability | gordon</td><td>dividendos</td><td>quality_profitability</td><td>gordon</td><td>—</td><td>—</td><td>intersecao</td><td>141</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_014</td><td>2</td><td>dividendos | magic_formula</td><td>dividendos</td><td>magic_formula</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>304</td><td>com_resultado</td><td>16</td><td>160</td></tr>
+<tr><td>COMB_SEL_015</td><td>3</td><td>dividendos | magic_formula | gordon</td><td>dividendos</td><td>magic_formula</td><td>gordon</td><td>—</td><td>—</td><td>intersecao</td><td>196</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_016</td><td>2</td><td>dividendos | gordon</td><td>dividendos</td><td>gordon</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>197</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_017</td><td>1</td><td>graham</td><td>graham</td><td>—</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>127</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_018</td><td>2</td><td>graham | quality_profitability</td><td>graham</td><td>quality_profitability</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>98</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_019</td><td>3</td><td>graham | quality_profitability | magic_formula</td><td>graham</td><td>quality_profitability</td><td>magic_formula</td><td>—</td><td>—</td><td>intersecao</td><td>98</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_020</td><td>4</td><td>graham | quality_profitability | magic_formula | gordon</td><td>graham</td><td>quality_profitability</td><td>magic_formula</td><td>gordon</td><td>—</td><td>intersecao</td><td>60</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_021</td><td>3</td><td>graham | quality_profitability | gordon</td><td>graham</td><td>quality_profitability</td><td>gordon</td><td>—</td><td>—</td><td>intersecao</td><td>60</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_022</td><td>2</td><td>graham | magic_formula</td><td>graham</td><td>magic_formula</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>125</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_023</td><td>3</td><td>graham | magic_formula | gordon</td><td>graham</td><td>magic_formula</td><td>gordon</td><td>—</td><td>—</td><td>intersecao</td><td>72</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_024</td><td>2</td><td>graham | gordon</td><td>graham</td><td>gordon</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>72</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_025</td><td>1</td><td>quality_profitability</td><td>quality_profitability</td><td>—</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>249</td><td>com_resultado</td><td>32</td><td>312</td></tr>
+<tr><td>COMB_SEL_026</td><td>2</td><td>quality_profitability | magic_formula</td><td>quality_profitability</td><td>magic_formula</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>241</td><td>com_resultado</td><td>24</td><td>240</td></tr>
+<tr><td>COMB_SEL_027</td><td>3</td><td>quality_profitability | magic_formula | gordon</td><td>quality_profitability</td><td>magic_formula</td><td>gordon</td><td>—</td><td>—</td><td>intersecao</td><td>140</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_028</td><td>2</td><td>quality_profitability | gordon</td><td>quality_profitability</td><td>gordon</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>141</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_029</td><td>1</td><td>magic_formula</td><td>magic_formula</td><td>—</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>356</td><td>com_resultado</td><td>24</td><td>240</td></tr>
+<tr><td>COMB_SEL_030</td><td>2</td><td>magic_formula | gordon</td><td>magic_formula</td><td>gordon</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>196</td><td>com_resultado</td><td></td><td></td></tr>
+<tr><td>COMB_SEL_031</td><td>1</td><td>gordon</td><td>gordon</td><td>—</td><td>—</td><td>—</td><td>—</td><td>intersecao</td><td>197</td><td>com_resultado</td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#tabela').DataTable({
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Todos']],
+        scrollX: true,
+        autoWidth: false,
+        deferRender: true,
+        order: [],
+        language: {
+          search: 'Buscar:',
+          lengthMenu: 'Mostrar _MENU_ linhas',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ linhas',
+          infoEmpty: 'Mostrando 0 a 0 de 0 linhas',
+          zeroRecords: 'Nenhum registro encontrado',
+          paginate: { first: 'Primeira', last: 'Última', next: 'Próxima', previous: 'Anterior' }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

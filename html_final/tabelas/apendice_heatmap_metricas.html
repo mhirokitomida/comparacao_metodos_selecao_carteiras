@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matriz do heatmap de métricas das carteiras</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; color: #0f172a; font-family: Arial, Helvetica, sans-serif; }
+    body { padding: 16px; }
+    .table-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .table-wrap { border: 1px solid #dbe3ee; border-radius: 14px; overflow: auto; padding: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06); }
+    table.dataTable { width: 100% !important; font-size: 14px; }
+    table.dataTable thead th { white-space: nowrap; background: #f8fafc !important; }
+    table.dataTable tbody td { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="table-title">Matriz do heatmap de métricas das carteiras</div>
+  <div class="table-wrap">
+    <table id="tabela" class="display compact stripe nowrap" style="width:100%">
+      <thead><tr><th>rotulo_linha</th><th>retorno_acumulado</th><th>sharpe_anualizado</th><th>sortino_anualizado</th><th>hit_ratio_vs_benchmark</th><th>robustez_janelas_moveis</th><th>max_drawdown</th></tr></thead>
+      <tbody>
+        <tr><td>01 | COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_puro__min_vol</td><td>-38,47%</td><td>-0,8644</td><td>-0,6739</td><td>-0,31%</td><td>68,60%</td><td>-85,63%</td></tr>
+<tr><td>02 | COMB_SEL_029__liquidez_e_momentum_leve__2023-05__markowitz_puro__max_sharpe</td><td>3,47%</td><td>-1,3439</td><td>-0,6907</td><td>-107,14%</td><td>68,60%</td><td>-143,10%</td></tr>
+<tr><td>03 | COMB_SEL_029__todos_filtros_auxiliares__2023-05__markowitz_puro__max_sharpe</td><td>3,47%</td><td>-1,3439</td><td>-0,6907</td><td>-107,14%</td><td>68,60%</td><td>-143,10%</td></tr>
+<tr><td>04 | COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_puro__max_sharpe</td><td>-37,22%</td><td>-0,9331</td><td>-0,6977</td><td>-53,72%</td><td>68,60%</td><td>-152,81%</td></tr>
+<tr><td>05 | COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_restrito__min_vol</td><td>-61,80%</td><td>-1,0503</td><td>-0,7073</td><td>-53,72%</td><td>68,60%</td><td>-97,48%</td></tr>
+<tr><td>06 | COMB_SEL_029__risco_financeiro_e_momentum_leve__2023-05__markowitz_restrito__max_sharpe</td><td>-66,05%</td><td>-1,2021</td><td>-0,7377</td><td>-53,72%</td><td>68,60%</td><td>-141,31%</td></tr>
+<tr><td>07 | COMB_SEL_011__apenas_risco_financeiro__2017-05__equal_weight</td><td>131,96%</td><td>1,2092</td><td>1,1695</td><td>-0,31%</td><td>68,60%</td><td>129,62%</td></tr>
+<tr><td>08 | COMB_SEL_011__sem_filtros_auxiliares__2017-05__equal_weight</td><td>131,96%</td><td>1,2092</td><td>1,1695</td><td>-0,31%</td><td>68,60%</td><td>129,62%</td></tr>
+<tr><td>09 | COMB_SEL_010__apenas_risco_financeiro__2017-05__equal_weight</td><td>25,81%</td><td>0,1351</td><td>0,1905</td><td>-53,72%</td><td>68,60%</td><td>118,61%</td></tr>
+<tr><td>10 | COMB_SEL_010__sem_filtros_auxiliares__2017-05__equal_weight</td><td>25,81%</td><td>0,1351</td><td>0,1905</td><td>-53,72%</td><td>68,60%</td><td>118,61%</td></tr>
+<tr><td>11 | COMB_SEL_011__apenas_momentum_leve__2017-05__equal_weight</td><td>158,40%</td><td>1,2183</td><td>1,2120</td><td>-0,31%</td><td>68,60%</td><td>82,58%</td></tr>
+<tr><td>12 | COMB_SEL_011__risco_financeiro_e_momentum_leve__2017-05__equal_weight</td><td>158,40%</td><td>1,2183</td><td>1,2120</td><td>-0,31%</td><td>68,60%</td><td>82,58%</td></tr>
+<tr><td>13 | COMB_SEL_001__apenas_liquidez__2025-05__equal_weight</td><td>-94,84%</td><td>0,4650</td><td>-0,5057</td><td>159,95%</td><td>-145,77%</td><td>18,59%</td></tr>
+<tr><td>14 | COMB_SEL_001__liquidez_e_momentum_leve__2025-05__equal_weight</td><td>-94,84%</td><td>0,4650</td><td>-0,5057</td><td>159,95%</td><td>-145,77%</td><td>18,59%</td></tr>
+<tr><td>15 | COMB_SEL_001__liquidez_e_risco_financeiro__2025-05__equal_weight</td><td>-94,84%</td><td>0,4650</td><td>-0,5057</td><td>159,95%</td><td>-145,77%</td><td>18,59%</td></tr>
+<tr><td>16 | COMB_SEL_001__todos_filtros_auxiliares__2025-05__equal_weight</td><td>-94,84%</td><td>0,4650</td><td>-0,5057</td><td>159,95%</td><td>-145,77%</td><td>18,59%</td></tr>
+<tr><td>17 | COMB_SEL_010__apenas_momentum_leve__2017-05__equal_weight</td><td>135,30%</td><td>1,3630</td><td>2,5136</td><td>-0,31%</td><td>68,60%</td><td>112,80%</td></tr>
+<tr><td>18 | COMB_SEL_010__risco_financeiro_e_momentum_leve__2017-05__equal_weight</td><td>135,30%</td><td>1,3630</td><td>2,5136</td><td>-0,31%</td><td>68,60%</td><td>112,80%</td></tr>
+<tr><td>19 | COMB_SEL_001__apenas_momentum_leve__2025-05__equal_weight</td><td>-123,94%</td><td>0,1941</td><td>-0,5846</td><td>68,38%</td><td>-145,77%</td><td>31,46%</td></tr>
+<tr><td>20 | COMB_SEL_001__risco_financeiro_e_momentum_leve__2025-05__equal_weight</td><td>-123,94%</td><td>0,1941</td><td>-0,5846</td><td>68,38%</td><td>-145,77%</td><td>31,46%</td></tr>
+<tr><td>21 | COMB_SEL_001__apenas_momentum_leve__2016-05__equal_weight</td><td>48,40%</td><td>-1,7973</td><td>-0,7544</td><td>-213,98%</td><td>68,60%</td><td>-147,20%</td></tr>
+<tr><td>22 | COMB_SEL_001__risco_financeiro_e_momentum_leve__2016-05__equal_weight</td><td>48,40%</td><td>-1,7973</td><td>-0,7544</td><td>-213,98%</td><td>68,60%</td><td>-147,20%</td></tr>
+<tr><td>23 | COMB_SEL_001__apenas_risco_financeiro__2025-05__equal_weight</td><td>-134,21%</td><td>-0,0846</td><td>-0,6454</td><td>68,38%</td><td>-145,77%</td><td>24,02%</td></tr>
+<tr><td>24 | COMB_SEL_001__sem_filtros_auxiliares__2025-05__equal_weight</td><td>-134,21%</td><td>-0,0846</td><td>-0,6454</td><td>68,38%</td><td>-145,77%</td><td>24,02%</td></tr>
+<tr><td>25 | COMB_SEL_029__apenas_momentum_leve__2017-05__equal_weight</td><td>92,54%</td><td>0,4021</td><td>0,0180</td><td>-0,31%</td><td>68,60%</td><td>-14,70%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#tabela').DataTable({
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Todos']],
+        scrollX: true,
+        autoWidth: false,
+        deferRender: true,
+        order: [],
+        language: {
+          search: 'Buscar:',
+          lengthMenu: 'Mostrar _MENU_ linhas',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ linhas',
+          infoEmpty: 'Mostrando 0 a 0 de 0 linhas',
+          zeroRecords: 'Nenhum registro encontrado',
+          paginate: { first: 'Primeira', last: 'Última', next: 'Próxima', previous: 'Anterior' }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

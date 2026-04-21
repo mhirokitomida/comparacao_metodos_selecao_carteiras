@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo por categoria de teste</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; color: #0f172a; font-family: Arial, Helvetica, sans-serif; }
+    body { padding: 16px; }
+    .table-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; }
+    .table-wrap { border: 1px solid #dbe3ee; border-radius: 14px; overflow: auto; padding: 10px; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06); }
+    table.dataTable { width: 100% !important; font-size: 14px; }
+    table.dataTable thead th { white-space: nowrap; background: #f8fafc !important; }
+    table.dataTable tbody td { white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="table-title">Resumo por categoria de teste</div>
+  <div class="table-wrap">
+    <table id="tabela" class="display compact stripe nowrap" style="width:100%">
+      <thead><tr><th>categoria_teste</th><th>universo</th><th>tipo_comparacao</th><th>n_testes</th><th>n_significativos</th><th>pct_significativos</th><th>pvalor_medio</th></tr></thead>
+      <tbody>
+        <tr><td>Retorno</td><td>trajetorias</td><td>unigrupo</td><td>162</td><td>143</td><td>88,27%</td><td>0,0482</td></tr>
+<tr><td>Retorno</td><td>trajetorias</td><td>pairwise</td><td>468</td><td>135</td><td>28,85%</td><td>0,4284</td></tr>
+<tr><td>Retorno</td><td>carteiras</td><td>unigrupo</td><td>162</td><td>136</td><td>83,95%</td><td>0,0594</td></tr>
+<tr><td>Retorno</td><td>carteiras</td><td>pairwise</td><td>468</td><td>79</td><td>16,88%</td><td>0,6011</td></tr>
+<tr><td>Risco</td><td>trajetorias</td><td>unigrupo</td><td>216</td><td>216</td><td>100,00%</td><td>0,0022</td></tr>
+<tr><td>Risco</td><td>trajetorias</td><td>pairwise</td><td>624</td><td>218</td><td>34,94%</td><td>0,3915</td></tr>
+<tr><td>Risco</td><td>carteiras</td><td>unigrupo</td><td>216</td><td>216</td><td>100,00%</td><td>0,0000</td></tr>
+<tr><td>Risco</td><td>carteiras</td><td>pairwise</td><td>624</td><td>164</td><td>26,28%</td><td>0,4630</td></tr>
+<tr><td>Sharpe/Sortino</td><td>trajetorias</td><td>unigrupo</td><td>216</td><td>202</td><td>93,52%</td><td>0,0230</td></tr>
+<tr><td>Sharpe/Sortino</td><td>trajetorias</td><td>pairwise</td><td>624</td><td>180</td><td>28,85%</td><td>0,4346</td></tr>
+<tr><td>Sharpe/Sortino</td><td>carteiras</td><td>unigrupo</td><td>216</td><td>174</td><td>80,56%</td><td>0,0728</td></tr>
+<tr><td>Sharpe/Sortino</td><td>carteiras</td><td>pairwise</td><td>624</td><td>66</td><td>10,58%</td><td>0,6939</td></tr>
+<tr><td>Drawdown</td><td>trajetorias</td><td>unigrupo</td><td>162</td><td>162</td><td>100,00%</td><td>0,0022</td></tr>
+<tr><td>Drawdown</td><td>trajetorias</td><td>pairwise</td><td>468</td><td>173</td><td>36,97%</td><td>0,4283</td></tr>
+<tr><td>Drawdown</td><td>carteiras</td><td>unigrupo</td><td>162</td><td>162</td><td>100,00%</td><td>0,0000</td></tr>
+<tr><td>Drawdown</td><td>carteiras</td><td>pairwise</td><td>468</td><td>106</td><td>22,65%</td><td>0,4578</td></tr>
+<tr><td>Dividendos</td><td>trajetorias</td><td>unigrupo</td><td>162</td><td>158</td><td>97,53%</td><td>0,0101</td></tr>
+<tr><td>Dividendos</td><td>trajetorias</td><td>pairwise</td><td>468</td><td>161</td><td>34,40%</td><td>0,3949</td></tr>
+<tr><td>Dividendos</td><td>carteiras</td><td>unigrupo</td><td>54</td><td>54</td><td>100,00%</td><td>0,0000</td></tr>
+<tr><td>Dividendos</td><td>carteiras</td><td>pairwise</td><td>156</td><td>73</td><td>46,79%</td><td>0,2504</td></tr>
+<tr><td>Hit Ratio</td><td>trajetorias</td><td>unigrupo</td><td>54</td><td>20</td><td>37,04%</td><td>0,2390</td></tr>
+<tr><td>Hit Ratio</td><td>trajetorias</td><td>pairwise</td><td>156</td><td>32</td><td>20,51%</td><td>0,4917</td></tr>
+<tr><td>Hit Ratio</td><td>carteiras</td><td>unigrupo</td><td>54</td><td>17</td><td>31,48%</td><td>0,3217</td></tr>
+<tr><td>Hit Ratio</td><td>carteiras</td><td>pairwise</td><td>156</td><td>10</td><td>6,41%</td><td>0,6789</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#tabela').DataTable({
+        pageLength: 25,
+        lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, 'Todos']],
+        scrollX: true,
+        autoWidth: false,
+        deferRender: true,
+        order: [],
+        language: {
+          search: 'Buscar:',
+          lengthMenu: 'Mostrar _MENU_ linhas',
+          info: 'Mostrando _START_ a _END_ de _TOTAL_ linhas',
+          infoEmpty: 'Mostrando 0 a 0 de 0 linhas',
+          zeroRecords: 'Nenhum registro encontrado',
+          paginate: { first: 'Primeira', last: 'Última', next: 'Próxima', previous: 'Anterior' }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
